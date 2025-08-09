@@ -14,6 +14,21 @@
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -47,12 +62,34 @@
   <PropertyGroup>
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>ico.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -73,6 +110,105 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="admin\Grado.Designer.vb">
+      <DependentUpon>Grado.vb</DependentUpon>
+    </Compile>
+    <Compile Include="admin\Grado.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="admin\Maestro.Designer.vb">
+      <DependentUpon>Maestro.vb</DependentUpon>
+    </Compile>
+    <Compile Include="admin\Maestro.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="admin\Materia.Designer.vb">
+      <DependentUpon>Materia.vb</DependentUpon>
+    </Compile>
+    <Compile Include="admin\Materia.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="admin\matricula1.Designer.vb">
+      <DependentUpon>matricula1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="admin\matricula1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="bienvenido.Designer.vb">
+      <DependentUpon>bienvenido.vb</DependentUpon>
+    </Compile>
+    <Compile Include="bienvenido.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="colegio1DataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>colegio1DataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="colegio1DataSet1.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>colegio1DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="colegio1DataSet2.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>colegio1DataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="colegio1DataSet3.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>colegio1DataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="colegio1DataSet4.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>colegio1DataSet4.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="colegio1DataSet5.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>colegio1DataSet5.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="colegio1DataSet6.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>colegio1DataSet6.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="colegio1DataSet7.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>colegio1DataSet7.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="colegio1DataSet8.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>colegio1DataSet8.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="frmAdmin.Designer.vb">
+      <DependentUpon>frmAdmin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmAdmin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEstudiante.Designer.vb">
+      <DependentUpon>frmEstudiante.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmEstudiante.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMaestro.Designer.vb">
+      <DependentUpon>frmMaestro.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMaestro.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmResponsable.Designer.vb">
+      <DependentUpon>frmResponsable.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmResponsable.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="login.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -80,6 +216,13 @@
       <DependentUpon>login.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="admin\matricula.Designer.vb">
+      <DependentUpon>matricula.vb</DependentUpon>
+    </Compile>
+    <Compile Include="admin\matricula.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="admin\Module1.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -98,6 +241,25 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="admin\Grado.resx">
+      <DependentUpon>Grado.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="admin\Maestro.resx">
+      <DependentUpon>Maestro.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="admin\Materia.resx">
+      <DependentUpon>Materia.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="admin\matricula.resx">
+      <DependentUpon>matricula.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="admin\matricula1.resx">
+      <DependentUpon>matricula1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="admin\Report1.rdlc" />
+    <EmbeddedResource Include="frmAdmin.resx">
+      <DependentUpon>frmAdmin.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="login.resx">
       <DependentUpon>login.vb</DependentUpon>
     </EmbeddedResource>
@@ -109,6 +271,105 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="colegio1DataSet.xsc">
+      <DependentUpon>colegio1DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="colegio1DataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>colegio1DataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="colegio1DataSet.xss">
+      <DependentUpon>colegio1DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="colegio1DataSet1.xsc">
+      <DependentUpon>colegio1DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="colegio1DataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>colegio1DataSet1.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="colegio1DataSet1.xss">
+      <DependentUpon>colegio1DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="colegio1DataSet2.xsc">
+      <DependentUpon>colegio1DataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="colegio1DataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>colegio1DataSet2.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="colegio1DataSet2.xss">
+      <DependentUpon>colegio1DataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="colegio1DataSet3.xsc">
+      <DependentUpon>colegio1DataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="colegio1DataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>colegio1DataSet3.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="colegio1DataSet3.xss">
+      <DependentUpon>colegio1DataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="colegio1DataSet4.xsc">
+      <DependentUpon>colegio1DataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="colegio1DataSet4.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>colegio1DataSet4.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="colegio1DataSet4.xss">
+      <DependentUpon>colegio1DataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="colegio1DataSet5.xsc">
+      <DependentUpon>colegio1DataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="colegio1DataSet5.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>colegio1DataSet5.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="colegio1DataSet5.xss">
+      <DependentUpon>colegio1DataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="colegio1DataSet6.xsc">
+      <DependentUpon>colegio1DataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="colegio1DataSet6.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>colegio1DataSet6.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="colegio1DataSet6.xss">
+      <DependentUpon>colegio1DataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="colegio1DataSet7.xsc">
+      <DependentUpon>colegio1DataSet7.xsd</DependentUpon>
+    </None>
+    <None Include="colegio1DataSet7.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>colegio1DataSet7.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="colegio1DataSet7.xss">
+      <DependentUpon>colegio1DataSet7.xsd</DependentUpon>
+    </None>
+    <None Include="colegio1DataSet8.xsc">
+      <DependentUpon>colegio1DataSet8.xsd</DependentUpon>
+    </None>
+    <None Include="colegio1DataSet8.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>colegio1DataSet8.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="colegio1DataSet8.xss">
+      <DependentUpon>colegio1DataSet8.xsd</DependentUpon>
+    </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
@@ -119,6 +380,36 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ico.ico" />
+    <Content Include="SqlServerTypes\Loader.cs" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 y x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
