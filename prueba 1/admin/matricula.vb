@@ -116,9 +116,38 @@ Public Class matricula
 
     Private Sub matricula_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: esta línea de código carga datos en la tab
+        OcultarCamposResponsable()
 
 
 
+    End Sub
+
+    Private Sub OcultarCamposResponsable()
+        txtNombreResp.Visible = False
+        txtApellidoResp.Visible = False
+        txtParentesco.Visible = False
+        txtTelefono.Visible = False
+        txtDireccionResp.Visible = False
+        lnp.Visible = False
+        lap.Visible = False
+        p.Visible = False
+        Label5.Visible = False
+        Label6.Visible = False
+
+
+    End Sub
+
+    Private Sub MostrarCamposResponsable()
+        txtNombreResp.Visible = True
+        txtApellidoResp.Visible = True
+        txtParentesco.Visible = True
+        txtTelefono.Visible = True
+        txtDireccionResp.Visible = True
+        lnp.Visible = True
+        lap.Visible = True
+        p.Visible = True
+        Label5.Visible = True
+        Label6.Visible = True
     End Sub
 
     Private Sub ReportViewer1_Load(sender As Object, e As EventArgs) Handles ReportViewer1.Load
@@ -227,8 +256,18 @@ Public Class matricula
                         txtTelefono.Text = reader("Telefono").ToString()
                         txtDireccionResp.Text = reader("Direccion").ToString()
 
+                        MostrarCamposResponsable()
+
+
                         MessageBox.Show("✅ Responsable encontrado y datos rellenados correctamente.")
                     Else
+                        txtNombreResp.Text = ""
+                        txtApellidoResp.Text = ""
+                        txtParentesco.Text = ""
+                        txtTelefono.Text = ""
+                        txtDireccionResp.Text = ""
+                        MostrarCamposResponsable()
+
                         MessageBox.Show("⚠️ No se encontró ningún responsable con esa cédula.")
                     End If
                 End Using

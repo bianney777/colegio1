@@ -37,7 +37,7 @@ Partial Class login
         '
         Me.textuser.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.textuser.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.textuser.Location = New System.Drawing.Point(349, 124)
+        Me.textuser.Location = New System.Drawing.Point(308, 117)
         Me.textuser.Name = "textuser"
         Me.textuser.Size = New System.Drawing.Size(227, 13)
         Me.textuser.TabIndex = 0
@@ -47,7 +47,7 @@ Partial Class login
         '
         Me.textcontra.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.textcontra.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.textcontra.Location = New System.Drawing.Point(349, 194)
+        Me.textcontra.Location = New System.Drawing.Point(308, 187)
         Me.textcontra.Name = "textcontra"
         Me.textcontra.Size = New System.Drawing.Size(217, 13)
         Me.textcontra.TabIndex = 1
@@ -55,7 +55,7 @@ Partial Class login
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(424, 216)
+        Me.Button1.Location = New System.Drawing.Point(383, 209)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(75, 23)
         Me.Button1.TabIndex = 2
@@ -76,7 +76,7 @@ Partial Class login
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(420, 101)
+        Me.Label1.Location = New System.Drawing.Point(379, 94)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(68, 20)
         Me.Label1.TabIndex = 4
@@ -86,7 +86,7 @@ Partial Class login
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(411, 167)
+        Me.Label2.Location = New System.Drawing.Point(370, 160)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(99, 20)
         Me.Label2.TabIndex = 5
@@ -96,7 +96,7 @@ Partial Class login
         '
         Me.Panel1.BackColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.Panel1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Panel1.Location = New System.Drawing.Point(359, 143)
+        Me.Panel1.Location = New System.Drawing.Point(318, 136)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(200, 1)
         Me.Panel1.TabIndex = 6
@@ -105,7 +105,7 @@ Partial Class login
         '
         Me.Panel2.BackColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.Panel2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Panel2.Location = New System.Drawing.Point(359, 209)
+        Me.Panel2.Location = New System.Drawing.Point(318, 202)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(200, 1)
         Me.Panel2.TabIndex = 7
@@ -115,7 +115,7 @@ Partial Class login
         Me.Panel3.BackColor = System.Drawing.SystemColors.InactiveCaption
         Me.Panel3.Location = New System.Drawing.Point(0, 0)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(343, 365)
+        Me.Panel3.Size = New System.Drawing.Size(249, 365)
         Me.Panel3.TabIndex = 8
         '
         'login
@@ -123,7 +123,7 @@ Partial Class login
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.ClientSize = New System.Drawing.Size(607, 363)
+        Me.ClientSize = New System.Drawing.Size(573, 363)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
@@ -136,6 +136,7 @@ Partial Class login
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "login"
         Me.Opacity = 0.9R
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Form1"
         Me.ResumeLayout(False)
         Me.PerformLayout()

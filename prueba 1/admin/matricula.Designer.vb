@@ -24,9 +24,11 @@ Partial Class matricula
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
+        Me.ObtenerMatriculaPorCodigoEstudianteBindingSource3 = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Colegio1DataSet2 = New prueba_1.colegio1DataSet2()
+        Me.lnp = New System.Windows.Forms.Label()
+        Me.lap = New System.Windows.Forms.Label()
+        Me.p = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
@@ -57,52 +59,60 @@ Partial Class matricula
         Me.Button2 = New System.Windows.Forms.Button()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Button3 = New System.Windows.Forms.Button()
-        Me.ObtenerMatriculaPorCodigoEstudianteBindingSource3 = New System.Windows.Forms.BindingSource(Me.components)
-        Me.Colegio1DataSet2 = New prueba_1.colegio1DataSet2()
         Me.ObtenerMatriculaPorCodigoEstudianteBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ObtenerMatriculaPorCodigoEstudianteTableAdapter = New prueba_1.colegio1DataSet2TableAdapters.ObtenerMatriculaPorCodigoEstudianteTableAdapter()
         Me.ObtenerMatriculaPorCodigoEstudianteBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.ObtenerMatriculaPorCodigoEstudianteBindingSource2 = New System.Windows.Forms.BindingSource(Me.components)
-        CType(Me.Colegio1DataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel1.SuspendLayout()
         CType(Me.ObtenerMatriculaPorCodigoEstudianteBindingSource3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Colegio1DataSet2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Colegio1DataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel1.SuspendLayout()
         CType(Me.ObtenerMatriculaPorCodigoEstudianteBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ObtenerMatriculaPorCodigoEstudianteBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ObtenerMatriculaPorCodigoEstudianteBindingSource2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'Label1
+        'ObtenerMatriculaPorCodigoEstudianteBindingSource3
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(36, 301)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(91, 13)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Nombre Completo"
+        Me.ObtenerMatriculaPorCodigoEstudianteBindingSource3.DataMember = "ObtenerMatriculaPorCodigoEstudiante"
+        Me.ObtenerMatriculaPorCodigoEstudianteBindingSource3.DataSource = Me.Colegio1DataSet2
         '
-        'Label2
+        'Colegio1DataSet2
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(36, 336)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(91, 13)
-        Me.Label2.TabIndex = 1
-        Me.Label2.Text = "Apellido Completo"
+        Me.Colegio1DataSet2.DataSetName = "colegio1DataSet2"
+        Me.Colegio1DataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
-        'Label3
+        'lnp
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(36, 365)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(61, 13)
-        Me.Label3.TabIndex = 2
-        Me.Label3.Text = "Parentesco"
+        Me.lnp.AutoSize = True
+        Me.lnp.Location = New System.Drawing.Point(36, 335)
+        Me.lnp.Name = "lnp"
+        Me.lnp.Size = New System.Drawing.Size(91, 13)
+        Me.lnp.TabIndex = 0
+        Me.lnp.Text = "Nombre Completo"
+        '
+        'lap
+        '
+        Me.lap.AutoSize = True
+        Me.lap.Location = New System.Drawing.Point(36, 370)
+        Me.lap.Name = "lap"
+        Me.lap.Size = New System.Drawing.Size(91, 13)
+        Me.lap.TabIndex = 1
+        Me.lap.Text = "Apellido Completo"
+        '
+        'p
+        '
+        Me.p.AutoSize = True
+        Me.p.Location = New System.Drawing.Point(36, 399)
+        Me.p.Name = "p"
+        Me.p.Size = New System.Drawing.Size(61, 13)
+        Me.p.TabIndex = 2
+        Me.p.Text = "Parentesco"
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(36, 392)
+        Me.Label4.Location = New System.Drawing.Point(45, 306)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(40, 13)
         Me.Label4.TabIndex = 3
@@ -111,7 +121,7 @@ Partial Class matricula
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(36, 425)
+        Me.Label5.Location = New System.Drawing.Point(36, 429)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(49, 13)
         Me.Label5.TabIndex = 4
@@ -120,7 +130,7 @@ Partial Class matricula
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(36, 452)
+        Me.Label6.Location = New System.Drawing.Point(36, 456)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(52, 13)
         Me.Label6.TabIndex = 5
@@ -251,35 +261,35 @@ Partial Class matricula
         '
         'txtNombreResp
         '
-        Me.txtNombreResp.Location = New System.Drawing.Point(133, 301)
+        Me.txtNombreResp.Location = New System.Drawing.Point(133, 335)
         Me.txtNombreResp.Name = "txtNombreResp"
         Me.txtNombreResp.Size = New System.Drawing.Size(273, 20)
         Me.txtNombreResp.TabIndex = 22
         '
         'txtApellidoResp
         '
-        Me.txtApellidoResp.Location = New System.Drawing.Point(133, 336)
+        Me.txtApellidoResp.Location = New System.Drawing.Point(133, 370)
         Me.txtApellidoResp.Name = "txtApellidoResp"
         Me.txtApellidoResp.Size = New System.Drawing.Size(273, 20)
         Me.txtApellidoResp.TabIndex = 23
         '
         'txtParentesco
         '
-        Me.txtParentesco.Location = New System.Drawing.Point(133, 365)
+        Me.txtParentesco.Location = New System.Drawing.Point(133, 399)
         Me.txtParentesco.Name = "txtParentesco"
         Me.txtParentesco.Size = New System.Drawing.Size(273, 20)
         Me.txtParentesco.TabIndex = 24
         '
         'txtCedula
         '
-        Me.txtCedula.Location = New System.Drawing.Point(133, 392)
+        Me.txtCedula.Location = New System.Drawing.Point(91, 303)
         Me.txtCedula.Name = "txtCedula"
         Me.txtCedula.Size = New System.Drawing.Size(273, 20)
         Me.txtCedula.TabIndex = 25
         '
         'txtTelefono
         '
-        Me.txtTelefono.Location = New System.Drawing.Point(133, 425)
+        Me.txtTelefono.Location = New System.Drawing.Point(133, 429)
         Me.txtTelefono.Name = "txtTelefono"
         Me.txtTelefono.Size = New System.Drawing.Size(273, 20)
         Me.txtTelefono.TabIndex = 26
@@ -296,7 +306,7 @@ Partial Class matricula
         '
         'txtDireccionResp
         '
-        Me.txtDireccionResp.Location = New System.Drawing.Point(133, 460)
+        Me.txtDireccionResp.Location = New System.Drawing.Point(133, 464)
         Me.txtDireccionResp.Name = "txtDireccionResp"
         Me.txtDireccionResp.Size = New System.Drawing.Size(273, 20)
         Me.txtDireccionResp.TabIndex = 29
@@ -308,7 +318,7 @@ Partial Class matricula
         Me.Panel1.Controls.Add(Me.TextBox1)
         Me.Panel1.Location = New System.Drawing.Point(563, 55)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(465, 477)
+        Me.Panel1.Size = New System.Drawing.Size(703, 679)
         Me.Panel1.TabIndex = 30
         '
         'ReportViewer1
@@ -317,10 +327,10 @@ Partial Class matricula
         ReportDataSource1.Value = Me.ObtenerMatriculaPorCodigoEstudianteBindingSource3
         Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource1)
         Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "prueba_1.Report1.rdlc"
-        Me.ReportViewer1.Location = New System.Drawing.Point(20, 58)
+        Me.ReportViewer1.Location = New System.Drawing.Point(20, 61)
         Me.ReportViewer1.Name = "ReportViewer1"
         Me.ReportViewer1.ServerReport.BearerToken = Nothing
-        Me.ReportViewer1.Size = New System.Drawing.Size(423, 410)
+        Me.ReportViewer1.Size = New System.Drawing.Size(674, 607)
         Me.ReportViewer1.TabIndex = 2
         '
         'Button2
@@ -341,22 +351,12 @@ Partial Class matricula
         '
         'Button3
         '
-        Me.Button3.Location = New System.Drawing.Point(424, 388)
+        Me.Button3.Location = New System.Drawing.Point(370, 306)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(75, 23)
         Me.Button3.TabIndex = 31
         Me.Button3.Text = "Buscar"
         Me.Button3.UseVisualStyleBackColor = True
-        '
-        'ObtenerMatriculaPorCodigoEstudianteBindingSource3
-        '
-        Me.ObtenerMatriculaPorCodigoEstudianteBindingSource3.DataMember = "ObtenerMatriculaPorCodigoEstudiante"
-        Me.ObtenerMatriculaPorCodigoEstudianteBindingSource3.DataSource = Me.Colegio1DataSet2
-        '
-        'Colegio1DataSet2
-        '
-        Me.Colegio1DataSet2.DataSetName = "colegio1DataSet2"
-        Me.Colegio1DataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'ObtenerMatriculaPorCodigoEstudianteBindingSource
         '
@@ -381,7 +381,7 @@ Partial Class matricula
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1055, 573)
+        Me.ClientSize = New System.Drawing.Size(1904, 1041)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.txtDireccionResp)
@@ -408,16 +408,16 @@ Partial Class matricula
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.p)
+        Me.Controls.Add(Me.lap)
+        Me.Controls.Add(Me.lnp)
         Me.Name = "matricula"
         Me.Text = "matricula"
+        CType(Me.ObtenerMatriculaPorCodigoEstudianteBindingSource3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Colegio1DataSet2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Colegio1DataSet1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
-        CType(Me.ObtenerMatriculaPorCodigoEstudianteBindingSource3, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Colegio1DataSet2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ObtenerMatriculaPorCodigoEstudianteBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ObtenerMatriculaPorCodigoEstudianteBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ObtenerMatriculaPorCodigoEstudianteBindingSource2, System.ComponentModel.ISupportInitialize).EndInit()
@@ -426,9 +426,9 @@ Partial Class matricula
 
     End Sub
 
-    Friend WithEvents Label1 As Label
-    Friend WithEvents Label2 As Label
-    Friend WithEvents Label3 As Label
+    Friend WithEvents lnp As Label
+    Friend WithEvents lap As Label
+    Friend WithEvents p As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents Label5 As Label
     Friend WithEvents Label6 As Label

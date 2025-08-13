@@ -28,10 +28,10 @@ Partial Class frmAdmin
         Me.MatriculaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GradoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MaestroToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.InscripcionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.InscripcionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -40,7 +40,7 @@ Partial Class frmAdmin
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AgregarToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(1096, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(1904, 24)
         Me.MenuStrip1.TabIndex = 1
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -54,32 +54,38 @@ Partial Class frmAdmin
         'MateriaToolStripMenuItem
         '
         Me.MateriaToolStripMenuItem.Name = "MateriaToolStripMenuItem"
-        Me.MateriaToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.MateriaToolStripMenuItem.Size = New System.Drawing.Size(135, 22)
         Me.MateriaToolStripMenuItem.Text = "Materia"
         '
         'MatriculaToolStripMenuItem
         '
         Me.MatriculaToolStripMenuItem.Name = "MatriculaToolStripMenuItem"
-        Me.MatriculaToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.MatriculaToolStripMenuItem.Size = New System.Drawing.Size(135, 22)
         Me.MatriculaToolStripMenuItem.Text = "Alumno"
         '
         'GradoToolStripMenuItem
         '
         Me.GradoToolStripMenuItem.Name = "GradoToolStripMenuItem"
-        Me.GradoToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.GradoToolStripMenuItem.Size = New System.Drawing.Size(135, 22)
         Me.GradoToolStripMenuItem.Text = "Grado"
         '
         'MaestroToolStripMenuItem
         '
         Me.MaestroToolStripMenuItem.Name = "MaestroToolStripMenuItem"
-        Me.MaestroToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.MaestroToolStripMenuItem.Size = New System.Drawing.Size(135, 22)
         Me.MaestroToolStripMenuItem.Text = "Maestro"
+        '
+        'InscripcionToolStripMenuItem
+        '
+        Me.InscripcionToolStripMenuItem.Name = "InscripcionToolStripMenuItem"
+        Me.InscripcionToolStripMenuItem.Size = New System.Drawing.Size(135, 22)
+        Me.InscripcionToolStripMenuItem.Text = "Inscripcion "
         '
         'Label1
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 48.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(347, 79)
+        Me.Label1.Location = New System.Drawing.Point(681, 78)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(361, 73)
         Me.Label1.TabIndex = 2
@@ -91,7 +97,7 @@ Partial Class frmAdmin
         Me.Panel1.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.Panel1.Location = New System.Drawing.Point(2, 23)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1094, 31)
+        Me.Panel1.Size = New System.Drawing.Size(1902, 31)
         Me.Panel1.TabIndex = 3
         '
         'Button1
@@ -103,23 +109,18 @@ Partial Class frmAdmin
         Me.Button1.Text = "Button1"
         Me.Button1.UseVisualStyleBackColor = True
         '
-        'InscripcionToolStripMenuItem
-        '
-        Me.InscripcionToolStripMenuItem.Name = "InscripcionToolStripMenuItem"
-        Me.InscripcionToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.InscripcionToolStripMenuItem.Text = "Inscripcion "
-        '
         'frmAdmin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1096, 617)
+        Me.ClientSize = New System.Drawing.Size(1904, 1041)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.MenuStrip1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Name = "frmAdmin"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frmAdmin"
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
