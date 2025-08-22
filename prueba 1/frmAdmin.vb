@@ -27,4 +27,8 @@
     Private Sub InscripcionToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles InscripcionToolStripMenuItem.Click
         matricula1.Show()
     End Sub
+
+    Private Sub PeriodoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PeriodoToolStripMenuItem.Click
+        periodo.Show()
+    End Sub
 End Class

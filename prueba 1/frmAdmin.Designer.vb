@@ -32,6 +32,7 @@ Partial Class frmAdmin
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.PeriodoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -46,7 +47,7 @@ Partial Class frmAdmin
         '
         'AgregarToolStripMenuItem
         '
-        Me.AgregarToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MateriaToolStripMenuItem, Me.MatriculaToolStripMenuItem, Me.GradoToolStripMenuItem, Me.MaestroToolStripMenuItem, Me.InscripcionToolStripMenuItem})
+        Me.AgregarToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MateriaToolStripMenuItem, Me.MatriculaToolStripMenuItem, Me.GradoToolStripMenuItem, Me.MaestroToolStripMenuItem, Me.InscripcionToolStripMenuItem, Me.PeriodoToolStripMenuItem})
         Me.AgregarToolStripMenuItem.Name = "AgregarToolStripMenuItem"
         Me.AgregarToolStripMenuItem.Size = New System.Drawing.Size(61, 20)
         Me.AgregarToolStripMenuItem.Text = "Agregar"
@@ -54,31 +55,31 @@ Partial Class frmAdmin
         'MateriaToolStripMenuItem
         '
         Me.MateriaToolStripMenuItem.Name = "MateriaToolStripMenuItem"
-        Me.MateriaToolStripMenuItem.Size = New System.Drawing.Size(135, 22)
+        Me.MateriaToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.MateriaToolStripMenuItem.Text = "Materia"
         '
         'MatriculaToolStripMenuItem
         '
         Me.MatriculaToolStripMenuItem.Name = "MatriculaToolStripMenuItem"
-        Me.MatriculaToolStripMenuItem.Size = New System.Drawing.Size(135, 22)
+        Me.MatriculaToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.MatriculaToolStripMenuItem.Text = "Alumno"
         '
         'GradoToolStripMenuItem
         '
         Me.GradoToolStripMenuItem.Name = "GradoToolStripMenuItem"
-        Me.GradoToolStripMenuItem.Size = New System.Drawing.Size(135, 22)
+        Me.GradoToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.GradoToolStripMenuItem.Text = "Grado"
         '
         'MaestroToolStripMenuItem
         '
         Me.MaestroToolStripMenuItem.Name = "MaestroToolStripMenuItem"
-        Me.MaestroToolStripMenuItem.Size = New System.Drawing.Size(135, 22)
+        Me.MaestroToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.MaestroToolStripMenuItem.Text = "Maestro"
         '
         'InscripcionToolStripMenuItem
         '
         Me.InscripcionToolStripMenuItem.Name = "InscripcionToolStripMenuItem"
-        Me.InscripcionToolStripMenuItem.Size = New System.Drawing.Size(135, 22)
+        Me.InscripcionToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.InscripcionToolStripMenuItem.Text = "Inscripcion "
         '
         'Label1
@@ -108,6 +109,12 @@ Partial Class frmAdmin
         Me.Button1.TabIndex = 4
         Me.Button1.Text = "Button1"
         Me.Button1.UseVisualStyleBackColor = True
+        '
+        'PeriodoToolStripMenuItem
+        '
+        Me.PeriodoToolStripMenuItem.Name = "PeriodoToolStripMenuItem"
+        Me.PeriodoToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.PeriodoToolStripMenuItem.Text = "periodo"
         '
         'frmAdmin
         '
@@ -139,4 +146,5 @@ Partial Class frmAdmin
     Friend WithEvents Button1 As Button
     Friend WithEvents MaestroToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents InscripcionToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents PeriodoToolStripMenuItem As ToolStripMenuItem
 End Class
