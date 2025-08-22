@@ -134,6 +134,12 @@
     <Compile Include="admin\matricula1.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="admin\periodo.Designer.vb">
+      <DependentUpon>periodo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="admin\periodo.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="bienvenido.Designer.vb">
       <DependentUpon>bienvenido.vb</DependentUpon>
     </Compile>
@@ -255,6 +261,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="admin\matricula1.resx">
       <DependentUpon>matricula1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="admin\periodo.resx">
+      <DependentUpon>periodo.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="admin\Report1.rdlc" />
     <EmbeddedResource Include="frmAdmin.resx">
