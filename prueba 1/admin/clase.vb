@@ -59,6 +59,8 @@ Public Class clase
 
                 cmd.ExecuteNonQuery()
                 MessageBox.Show("✅ Clase creada correctamente", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                txtNombreClase.Clear()
+
 
             Catch ex As Exception
                 MessageBox.Show("❌ Error al crear la clase: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)

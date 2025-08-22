@@ -117,6 +117,9 @@ Public Class matricula
     Private Sub matricula_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: esta línea de código carga datos en la tab
         OcultarCamposResponsable()
+        CargarEstudiantesPorCodigo()
+        CargarClases()
+        CargarPeriodos()
 
 
 
@@ -288,6 +291,236 @@ Public Class matricula
 
         ImprimirMatriculaPorCodigo(codigo)
 
+
+    End Sub
+
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+        If cboEstudiante.SelectedItem Is Nothing OrElse cboPeriodo.SelectedValue Is Nothing Then
+            MessageBox.Show("Seleccione estudiante y periodo.")
+            Exit Sub
+        End If
+
+        If CheckedListBox1.CheckedItems.Count = 0 Then
+            MessageBox.Show("Seleccione al menos un curso.")
+            Exit Sub
+        End If
+
+        Dim row As DataRowView = CType(cboEstudiante.SelectedItem, DataRowView)
+        Dim estudianteID As Integer = Convert.ToInt32(row("EstudianteID"))
+        Dim periodoID As Integer = Convert.ToInt32(cboPeriodo.SelectedValue)
+        Dim connString As String = "Server=(localdb)\MSSQLLocalDB;Database=colegio1;Integrated Security=True"
+
+        Try
+            Using conn As New SqlConnection(connString)
+                conn.Open()
+
+                For Each item In CheckedListBox1.CheckedItems
+                    Dim claseItem As ClaseItem = CType(item, ClaseItem)
+                    Dim claseID As Integer = claseItem.ID
+
+                    ' Validar si ya existe la matrícula
+                    Dim validarCmd As New SqlCommand("
+                    SELECT COUNT(*)  
+                    FROM Matricula  
+                    WHERE EstudianteID = @est AND ClaseID = @clase AND PeriodoID = @periodo", conn)
+                    validarCmd.Parameters.AddWithValue("@est", estudianteID)
+                    validarCmd.Parameters.AddWithValue("@clase", claseID)
+                    validarCmd.Parameters.AddWithValue("@periodo", periodoID)
+
+                    Dim existe As Integer = Convert.ToInt32(validarCmd.ExecuteScalar())
+                    If existe = 0 Then
+                        ' Insertar matrícula
+                        Dim insertarCmd As New SqlCommand("
+                        INSERT INTO Matricula (EstudianteID, ClaseID, PeriodoID, FechaMatricula)  
+                        VALUES (@est, @clase, @periodo, @fecha)", conn)
+                        insertarCmd.Parameters.AddWithValue("@est", estudianteID)
+                        insertarCmd.Parameters.AddWithValue("@clase", claseID)
+                        insertarCmd.Parameters.AddWithValue("@periodo", periodoID)
+                        insertarCmd.Parameters.AddWithValue("@fecha", DateTime.Now.Date)
+                        insertarCmd.ExecuteNonQuery()
+                    End If
+                Next
+
+                MessageBox.Show("Matrícula registrada exitosamente.")
+            End Using
+
+        Catch ex As Exception
+            MessageBox.Show("Error al registrar matrícula: " & ex.Message)
+        End Try
+    End Sub
+
+    Private Sub CargarEstudiantesPorCodigo()
+        Dim connString As String = "Server=(localdb)\MSSQLLocalDB;Database=colegio1;Integrated Security=True"
+        Using conn As New SqlConnection(connString)
+            conn.Open()
+            Dim cmd As New SqlCommand("SELECT EstudianteID, CodigoEstudiante FROM Estudiante", conn)
+            Dim dtEst As New DataTable()
+            dtEst.Load(cmd.ExecuteReader())
+
+            cboEstudiante.DisplayMember = "CodigoEstudiante"
+            cboEstudiante.ValueMember = "EstudianteID"
+            cboEstudiante.DataSource = dtEst
+        End Using
+    End Sub
+
+
+
+    Private Sub CargarClases()
+
+        Dim connString As String = "Server=(localdb)\MSSQLLocalDB;Database=colegio1;Integrated Security=True"
+
+        Try
+            Using conn As New SqlConnection(connString)
+                conn.Open()
+
+                Dim query As String = "
+                SELECT 
+                    c.ClaseID,
+                    g.NombreGrado,
+                    a.Nombre AS NombreAsignatura,
+                    m.Nombre + ' ' + m.Apellido AS NombreMaestro,
+                    p.NombrePeriodo
+                FROM Clase c
+                JOIN Grado g ON c.GradoID = g.GradoID
+                JOIN Asignatura a ON c.AsignaturaID = a.AsignaturaID
+                JOIN Maestro m ON c.MaestroID = m.MaestroID
+                JOIN Periodo p ON c.PeriodoID = p.PeriodoID
+            "
+
+                Using cmd As New SqlCommand(query, conn)
+                    Using reader As SqlDataReader = cmd.ExecuteReader()
+                        CheckedListBox1.Items.Clear()
+
+                        While reader.Read()
+                            Dim descripcion As String = $"{reader("NombreGrado")} - {reader("NombreAsignatura")} - {reader("NombreMaestro")} - {reader("NombrePeriodo")}"
+                            Dim claseID As Integer = Convert.ToInt32(reader("ClaseID"))
+
+                            Dim item As New ClaseItem With {
+                                .ID = claseID,
+                                .Texto = descripcion
+                            }
+
+                            CheckedListBox1.Items.Add(item)
+                        End While
+                    End Using
+                End Using
+            End Using
+
+        Catch ex As Exception
+            MessageBox.Show("Error al cargar clases: " & ex.Message)
+        End Try
+
+
+
+
+
+
+    End Sub
+
+
+
+
+    Private Sub CargarPeriodos()
+        Dim connString As String = "Server=(localdb)\MSSQLLocalDB;Database=colegio1;Integrated Security=True"
+        Using conn As New SqlConnection(connString)
+            conn.Open()
+            Dim cmd As New SqlCommand("SELECT PeriodoID, NombrePeriodo FROM Periodo", conn)
+            Dim dtPeriodo As New DataTable()
+            dtPeriodo.Load(cmd.ExecuteReader())
+            cboPeriodo.DataSource = dtPeriodo
+            cboPeriodo.DisplayMember = "NombrePeriodo"
+            cboPeriodo.ValueMember = "PeriodoID"
+        End Using
+    End Sub
+
+    Private Sub cboEstudiante_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboEstudiante.SelectedIndexChanged
+        If cboEstudiante.SelectedItem IsNot Nothing Then
+            Dim row As DataRowView = CType(cboEstudiante.SelectedItem, DataRowView)
+            Dim estudianteID As Integer = Convert.ToInt32(row("EstudianteID"))
+
+            Dim connString As String = "Server=(localdb)\MSSQLLocalDB;Database=colegio1;Integrated Security=True"
+            Using conn As New SqlConnection(connString)
+                conn.Open()
+                Dim cmd As New SqlCommand("
+                SELECT Nombre + ' ' + Apellido AS NombreCompleto 
+                FROM Estudiante 
+                WHERE EstudianteID = @id", conn)
+                cmd.Parameters.AddWithValue("@id", estudianteID)
+                Dim nombre As String = Convert.ToString(cmd.ExecuteScalar())
+                lblNombreEstudiante.Text = nombre
+            End Using
+        End If
+
+
+    End Sub
+
+    Public Class ClaseItem
+        Public Property ID As Integer
+        Public Property Texto As String
+
+        Public Overrides Function ToString() As String
+            Return Texto
+        End Function
+    End Class
+
+
+    Private Sub CheckedListBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CheckedListBox1.SelectedIndexChanged
+
+    End Sub
+
+
+    Private Function ObtenerEstudianteID(nombreCompleto As String) As Integer
+        Dim connString As String = "Server=(localdb)\MSSQLLocalDB;Database=colegio1;Integrated Security=True"
+        Using conn As New SqlConnection(connString)
+            conn.Open()
+            Dim query As String = "SELECT EstudianteID FROM Estudiante WHERE Nombre + ' ' + Apellido = @nombre"
+            Using cmd As New SqlCommand(query, conn)
+                cmd.Parameters.AddWithValue("@nombre", nombreCompleto)
+                Dim result = cmd.ExecuteScalar()
+                If result IsNot Nothing Then
+                    Return Convert.ToInt32(result)
+                End If
+            End Using
+        End Using
+        Return -1 ' No encontrado
+    End Function
+
+
+    Private Sub MostrarClasesDelEstudiantePorAño(estudianteID As Integer, añoActual As Integer)
+        Dim connString As String = "Server=(localdb)\MSSQLLocalDB;Database=colegio1;Integrated Security=True"
+        Using conn As New SqlConnection(connString)
+            conn.Open()
+            Dim query As String = "
+            SELECT c.NombreClase, a.Nombre AS Asignatura, p.NombrePeriodo
+            FROM Matricula m
+            JOIN Clase c ON m.ClaseID = c.ClaseID
+            JOIN Asignatura a ON c.AsignaturaID = a.AsignaturaID
+            JOIN Periodo p ON m.PeriodoID = p.PeriodoID
+            WHERE m.EstudianteID = @id AND YEAR(m.FechaMatricula) = @año"
+            Using cmd As New SqlCommand(query, conn)
+                cmd.Parameters.AddWithValue("@id", estudianteID)
+                cmd.Parameters.AddWithValue("@año", añoActual)
+                Using reader As SqlDataReader = cmd.ExecuteReader()
+                    ListBox1.Items.Clear()
+                    While reader.Read()
+                        Dim claseInfo As String = $"{reader("NombreClase")} - {reader("Asignatura")} - {reader("NombrePeriodo")}"
+                        ListBox1.Items.Add(claseInfo)
+                    End While
+                End Using
+            End Using
+        End Using
+    End Sub
+
+    Private Sub lblNombreEstudiante_Click(sender As Object, e As EventArgs) Handles lblNombreEstudiante.Click
+
+        Dim nombreCompleto As String = lblNombreEstudiante.Text.Trim()
+        Dim estudianteID As Integer = ObtenerEstudianteID(nombreCompleto)
+        If estudianteID <> -1 Then
+            Dim añoActual As Integer = DateTime.Now.Year
+            MostrarClasesDelEstudiantePorAño(estudianteID, añoActual)
+        Else
+            MessageBox.Show("Estudiante no encontrado.")
+        End If
 
     End Sub
 End Class

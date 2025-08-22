@@ -33,6 +33,7 @@ Partial Class frmAdmin
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.PeriodoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ClaseToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -47,7 +48,7 @@ Partial Class frmAdmin
         '
         'AgregarToolStripMenuItem
         '
-        Me.AgregarToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MateriaToolStripMenuItem, Me.MatriculaToolStripMenuItem, Me.GradoToolStripMenuItem, Me.MaestroToolStripMenuItem, Me.InscripcionToolStripMenuItem, Me.PeriodoToolStripMenuItem})
+        Me.AgregarToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MateriaToolStripMenuItem, Me.MatriculaToolStripMenuItem, Me.GradoToolStripMenuItem, Me.MaestroToolStripMenuItem, Me.InscripcionToolStripMenuItem, Me.PeriodoToolStripMenuItem, Me.ClaseToolStripMenuItem})
         Me.AgregarToolStripMenuItem.Name = "AgregarToolStripMenuItem"
         Me.AgregarToolStripMenuItem.Size = New System.Drawing.Size(61, 20)
         Me.AgregarToolStripMenuItem.Text = "Agregar"
@@ -116,6 +117,12 @@ Partial Class frmAdmin
         Me.PeriodoToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.PeriodoToolStripMenuItem.Text = "periodo"
         '
+        'ClaseToolStripMenuItem
+        '
+        Me.ClaseToolStripMenuItem.Name = "ClaseToolStripMenuItem"
+        Me.ClaseToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.ClaseToolStripMenuItem.Text = "Clase"
+        '
         'frmAdmin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -147,4 +154,5 @@ Partial Class frmAdmin
     Friend WithEvents MaestroToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents InscripcionToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents PeriodoToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ClaseToolStripMenuItem As ToolStripMenuItem
 End Class

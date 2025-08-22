@@ -23,9 +23,7 @@ Partial Class matricula
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim ReportDataSource2 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
-        Me.ObtenerMatriculaPorCodigoEstudianteBindingSource3 = New System.Windows.Forms.BindingSource(Me.components)
-        Me.Colegio1DataSet2 = New prueba_1.colegio1DataSet2()
+        Dim ReportDataSource3 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
         Me.lnp = New System.Windows.Forms.Label()
         Me.lap = New System.Windows.Forms.Label()
         Me.p = New System.Windows.Forms.Label()
@@ -55,32 +53,34 @@ Partial Class matricula
         Me.Button1 = New System.Windows.Forms.Button()
         Me.txtDireccionResp = New System.Windows.Forms.TextBox()
         Me.Button3 = New System.Windows.Forms.Button()
+        Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.cboEstudiante = New System.Windows.Forms.ComboBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.lblNombreEstudiante = New System.Windows.Forms.Label()
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.cboPeriodo = New System.Windows.Forms.ComboBox()
+        Me.Label16 = New System.Windows.Forms.Label()
+        Me.Button4 = New System.Windows.Forms.Button()
+        Me.CheckedListBox1 = New System.Windows.Forms.CheckedListBox()
+        Me.ObtenerMatriculaPorCodigoEstudianteBindingSource3 = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Colegio1DataSet2 = New prueba_1.colegio1DataSet2()
         Me.ObtenerMatriculaPorCodigoEstudianteBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ObtenerMatriculaPorCodigoEstudianteTableAdapter = New prueba_1.colegio1DataSet2TableAdapters.ObtenerMatriculaPorCodigoEstudianteTableAdapter()
         Me.ObtenerMatriculaPorCodigoEstudianteBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.ObtenerMatriculaPorCodigoEstudianteBindingSource2 = New System.Windows.Forms.BindingSource(Me.components)
-        Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.Button2 = New System.Windows.Forms.Button()
+        Me.ListBox1 = New System.Windows.Forms.ListBox()
+        CType(Me.Colegio1DataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel1.SuspendLayout()
         CType(Me.ObtenerMatriculaPorCodigoEstudianteBindingSource3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Colegio1DataSet2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Colegio1DataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ObtenerMatriculaPorCodigoEstudianteBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ObtenerMatriculaPorCodigoEstudianteBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ObtenerMatriculaPorCodigoEstudianteBindingSource2, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'ObtenerMatriculaPorCodigoEstudianteBindingSource3
-        '
-        Me.ObtenerMatriculaPorCodigoEstudianteBindingSource3.DataMember = "ObtenerMatriculaPorCodigoEstudiante"
-        Me.ObtenerMatriculaPorCodigoEstudianteBindingSource3.DataSource = Me.Colegio1DataSet2
-        '
-        'Colegio1DataSet2
-        '
-        Me.Colegio1DataSet2.DataSetName = "colegio1DataSet2"
-        Me.Colegio1DataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'lnp
         '
@@ -320,6 +320,132 @@ Partial Class matricula
         Me.Button3.Text = "Buscar"
         Me.Button3.UseVisualStyleBackColor = True
         '
+        'ReportViewer1
+        '
+        ReportDataSource3.Name = "DataSet3"
+        ReportDataSource3.Value = Me.ObtenerMatriculaPorCodigoEstudianteBindingSource3
+        Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource3)
+        Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "prueba_1.Report1.rdlc"
+        Me.ReportViewer1.Location = New System.Drawing.Point(20, 61)
+        Me.ReportViewer1.Name = "ReportViewer1"
+        Me.ReportViewer1.ServerReport.BearerToken = Nothing
+        Me.ReportViewer1.Size = New System.Drawing.Size(674, 607)
+        Me.ReportViewer1.TabIndex = 2
+        '
+        'Panel1
+        '
+        Me.Panel1.Controls.Add(Me.ReportViewer1)
+        Me.Panel1.Controls.Add(Me.Button2)
+        Me.Panel1.Controls.Add(Me.TextBox1)
+        Me.Panel1.Location = New System.Drawing.Point(563, 55)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(703, 679)
+        Me.Panel1.TabIndex = 30
+        '
+        'Button2
+        '
+        Me.Button2.Location = New System.Drawing.Point(313, 29)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(75, 23)
+        Me.Button2.TabIndex = 1
+        Me.Button2.UseVisualStyleBackColor = True
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(20, 33)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(277, 20)
+        Me.TextBox1.TabIndex = 0
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(1307, 55)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(94, 24)
+        Me.Label1.TabIndex = 35
+        Me.Label1.Text = "Matricula"
+        '
+        'cboEstudiante
+        '
+        Me.cboEstudiante.FormattingEnabled = True
+        Me.cboEstudiante.Location = New System.Drawing.Point(1311, 146)
+        Me.cboEstudiante.Name = "cboEstudiante"
+        Me.cboEstudiante.Size = New System.Drawing.Size(219, 21)
+        Me.cboEstudiante.TabIndex = 33
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(1308, 116)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(119, 13)
+        Me.Label2.TabIndex = 36
+        Me.Label2.Text = "Seleccionar  Estudiante"
+        '
+        'lblNombreEstudiante
+        '
+        Me.lblNombreEstudiante.AutoSize = True
+        Me.lblNombreEstudiante.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblNombreEstudiante.Location = New System.Drawing.Point(1308, 183)
+        Me.lblNombreEstudiante.Name = "lblNombreEstudiante"
+        Me.lblNombreEstudiante.Size = New System.Drawing.Size(0, 20)
+        Me.lblNombreEstudiante.TabIndex = 38
+        '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.Location = New System.Drawing.Point(1309, 229)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(95, 13)
+        Me.Label15.TabIndex = 39
+        Me.Label15.Text = "Seleccionar  Clase"
+        '
+        'cboPeriodo
+        '
+        Me.cboPeriodo.FormattingEnabled = True
+        Me.cboPeriodo.Location = New System.Drawing.Point(1312, 374)
+        Me.cboPeriodo.Name = "cboPeriodo"
+        Me.cboPeriodo.Size = New System.Drawing.Size(121, 21)
+        Me.cboPeriodo.TabIndex = 40
+        '
+        'Label16
+        '
+        Me.Label16.AutoSize = True
+        Me.Label16.Location = New System.Drawing.Point(1309, 358)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(43, 13)
+        Me.Label16.TabIndex = 41
+        Me.Label16.Text = "Periodo"
+        '
+        'Button4
+        '
+        Me.Button4.Location = New System.Drawing.Point(1312, 419)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(208, 66)
+        Me.Button4.TabIndex = 42
+        Me.Button4.Text = "Matricular"
+        Me.Button4.UseVisualStyleBackColor = True
+        '
+        'CheckedListBox1
+        '
+        Me.CheckedListBox1.FormattingEnabled = True
+        Me.CheckedListBox1.Location = New System.Drawing.Point(1313, 245)
+        Me.CheckedListBox1.Name = "CheckedListBox1"
+        Me.CheckedListBox1.Size = New System.Drawing.Size(418, 94)
+        Me.CheckedListBox1.TabIndex = 43
+        '
+        'ObtenerMatriculaPorCodigoEstudianteBindingSource3
+        '
+        Me.ObtenerMatriculaPorCodigoEstudianteBindingSource3.DataMember = "ObtenerMatriculaPorCodigoEstudiante"
+        Me.ObtenerMatriculaPorCodigoEstudianteBindingSource3.DataSource = Me.Colegio1DataSet2
+        '
+        'Colegio1DataSet2
+        '
+        Me.Colegio1DataSet2.DataSetName = "colegio1DataSet2"
+        Me.Colegio1DataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
         'ObtenerMatriculaPorCodigoEstudianteBindingSource
         '
         Me.ObtenerMatriculaPorCodigoEstudianteBindingSource.DataMember = "ObtenerMatriculaPorCodigoEstudiante"
@@ -339,48 +465,29 @@ Partial Class matricula
         Me.ObtenerMatriculaPorCodigoEstudianteBindingSource2.DataMember = "ObtenerMatriculaPorCodigoEstudiante"
         Me.ObtenerMatriculaPorCodigoEstudianteBindingSource2.DataSource = Me.Colegio1DataSet2
         '
-        'ReportViewer1
+        'ListBox1
         '
-        ReportDataSource2.Name = "DataSet3"
-        ReportDataSource2.Value = Me.ObtenerMatriculaPorCodigoEstudianteBindingSource3
-        Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource2)
-        Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "prueba_1.Report1.rdlc"
-        Me.ReportViewer1.Location = New System.Drawing.Point(20, 61)
-        Me.ReportViewer1.Name = "ReportViewer1"
-        Me.ReportViewer1.ServerReport.BearerToken = Nothing
-        Me.ReportViewer1.Size = New System.Drawing.Size(674, 607)
-        Me.ReportViewer1.TabIndex = 2
-        '
-        'Panel1
-        '
-        Me.Panel1.Controls.Add(Me.ReportViewer1)
-        Me.Panel1.Controls.Add(Me.Button2)
-        Me.Panel1.Controls.Add(Me.TextBox1)
-        Me.Panel1.Location = New System.Drawing.Point(563, 55)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(703, 679)
-        Me.Panel1.TabIndex = 30
-        '
-        'TextBox1
-        '
-        Me.TextBox1.Location = New System.Drawing.Point(20, 33)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(277, 20)
-        Me.TextBox1.TabIndex = 0
-        '
-        'Button2
-        '
-        Me.Button2.Location = New System.Drawing.Point(313, 29)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(75, 23)
-        Me.Button2.TabIndex = 1
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.ListBox1.FormattingEnabled = True
+        Me.ListBox1.Location = New System.Drawing.Point(1313, 561)
+        Me.ListBox1.Name = "ListBox1"
+        Me.ListBox1.Size = New System.Drawing.Size(515, 95)
+        Me.ListBox1.TabIndex = 44
         '
         'matricula
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1904, 1041)
+        Me.Controls.Add(Me.ListBox1)
+        Me.Controls.Add(Me.CheckedListBox1)
+        Me.Controls.Add(Me.Button4)
+        Me.Controls.Add(Me.Label16)
+        Me.Controls.Add(Me.cboPeriodo)
+        Me.Controls.Add(Me.Label15)
+        Me.Controls.Add(Me.lblNombreEstudiante)
+        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.cboEstudiante)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.txtDireccionResp)
@@ -412,14 +519,14 @@ Partial Class matricula
         Me.Controls.Add(Me.lnp)
         Me.Name = "matricula"
         Me.Text = "matricula"
+        CType(Me.Colegio1DataSet1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         CType(Me.ObtenerMatriculaPorCodigoEstudianteBindingSource3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Colegio1DataSet2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Colegio1DataSet1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ObtenerMatriculaPorCodigoEstudianteBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ObtenerMatriculaPorCodigoEstudianteBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ObtenerMatriculaPorCodigoEstudianteBindingSource2, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -464,4 +571,14 @@ Partial Class matricula
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Button2 As Button
     Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents Label1 As Label
+    Friend WithEvents cboEstudiante As ComboBox
+    Friend WithEvents Label2 As Label
+    Friend WithEvents lblNombreEstudiante As Label
+    Friend WithEvents Label15 As Label
+    Friend WithEvents cboPeriodo As ComboBox
+    Friend WithEvents Label16 As Label
+    Friend WithEvents Button4 As Button
+    Friend WithEvents CheckedListBox1 As CheckedListBox
+    Friend WithEvents ListBox1 As ListBox
 End Class

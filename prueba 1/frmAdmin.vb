@@ -31,4 +31,8 @@
     Private Sub PeriodoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PeriodoToolStripMenuItem.Click
         periodo.Show()
     End Sub
+
+    Private Sub ClaseToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ClaseToolStripMenuItem.Click
+        clase.Show()
+    End Sub
 End Class
