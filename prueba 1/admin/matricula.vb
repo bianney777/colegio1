@@ -117,6 +117,8 @@ Public Class matricula
     Private Sub matricula_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: esta línea de código carga datos en la tabla 'Colegio1DataSet2.ObtenerMatriculaPorCodigoEstudiante' Puede moverla o quitarla según sea necesario.
 
+        'TODO: esta línea de código carga datos en la tabla 'Colegio1DataSet2.ObtenerMatriculaPorCodigoEstudiante' Puede moverla o quitarla según sea necesario.
+
         'TODO: esta línea de código carga datos en la tab
         OcultarCamposResponsable()
         CargarEstudiantesPorCodigo()
@@ -126,6 +128,7 @@ Public Class matricula
 
 
 
+        Me.ReportViewer2.RefreshReport()
     End Sub
 
     Private Sub OcultarCamposResponsable()
@@ -530,31 +533,24 @@ Public Class matricula
 
 
     End Sub
-    Private Sub MostrarReporteMatricula(codigoEstudiante As String)
+    Private Sub MostrarReporteMatricula(CodigoEstudiante As String)
         Try
-            ' Validar el código ingresado
-            If String.IsNullOrWhiteSpace(codigoEstudiante) Then
+            ' 🔍 Validar entrada
+            If String.IsNullOrWhiteSpace(CodigoEstudiante) Then
                 MessageBox.Show("⚠️ Por favor, ingrese un código de estudiante válido.")
                 Exit Sub
             End If
 
-            ' Preparar DataTable para recibir los datos
+            ' 📦 Preparar DataTable
             Dim dt As New DataTable()
 
-            ' Conexión a la base de datos
+            ' 🔗 Conexión y ejecución del procedimiento almacenado
             Dim connectionString As String = "Server=(localdb)\MSSQLLocalDB;Database=colegio1;Integrated Security=True"
             Using conn As New SqlConnection(connectionString)
                 conn.Open()
-
-                ' Consulta directa sobre la vista
-                Dim query As String = "
-                SELECT *
-                FROM VistaReporteMatriculaEstudiante1
-                WHERE CodigoEstudiante = @Codigo
-                  AND YEAR(FechaMatricula) = YEAR(GETDATE());"
-
-                Using cmd As New SqlCommand(query, conn)
-                    cmd.Parameters.AddWithValue("@Codigo", codigoEstudiante)
+                Using cmd As New SqlCommand("ObtenerMatriculaPorCodigoEstudiante1", conn)
+                    cmd.CommandType = CommandType.StoredProcedure
+                    cmd.Parameters.AddWithValue("@CodigoEstudiante", CodigoEstudiante)
 
                     Using adapter As New SqlDataAdapter(cmd)
                         adapter.Fill(dt)
@@ -562,34 +558,46 @@ Public Class matricula
                 End Using
             End Using
 
-            ' Validar si hay resultados
+            ' 📊 Validar resultados
             If dt.Rows.Count = 0 Then
                 MessageBox.Show("❌ No se encontró matrícula con el código proporcionado.")
                 Exit Sub
             End If
 
-            ' Validar existencia del archivo RDLC
-            Dim rdlcPath As String = Application.StartupPath & "\Report2.rdlc"
+            ' 📁 Validar existencia del archivo RDLC
+            Dim rdlcPath As String = Path.Combine(Application.StartupPath, "Report2.rdlc")
             If Not File.Exists(rdlcPath) Then
                 MessageBox.Show("❌ El archivo del reporte no fue encontrado: " & rdlcPath)
                 Exit Sub
             End If
 
-            ' Mostrar reporte en ReportViewer2
-            ReportViewer2.Reset()
-            ReportViewer2.LocalReport.ReportPath = rdlcPath
-            ReportViewer2.LocalReport.DataSources.Clear()
+            ' 🖥️ Configurar ReportViewer
+            With ReportViewer2
+                .Reset()
+                .LocalReport.ReportPath = rdlcPath
+                .LocalReport.DataSources.Clear()
 
-            ' Asegurate de que el nombre coincida con el DataSet definido en el RDLC
-            ReportViewer2.LocalReport.DataSources.Add(New ReportDataSource("DataSet2", dt))
-            ReportViewer2.RefreshReport()
+                ' ⚠️ Asegúrate que "DataSet2" coincida con el nombre del DataSet en el RDLC
+                .LocalReport.DataSources.Add(New ReportDataSource("DataSet2", dt))
+
+                ' ⚠️ Verifica que el parámetro "CodigoEstudiante" esté definido en el RDLC
+                Try
+                    .LocalReport.SetParameters(New ReportParameter() {
+                    New ReportParameter("CodigoEstudiante", CodigoEstudiante)
+                })
+                Catch paramEx As Exception
+                    MessageBox.Show("⚠️ El parámetro 'CodigoEstudiante' no está definido en el RDLC: " & paramEx.Message)
+                End Try
+
+                .RefreshReport()
+            End With
 
         Catch ex As Exception
-            MessageBox.Show("❌ Error al cargar el reporte: " & ex.Message)
+            MessageBox.Show("❌ Error al cargar el reporte: " & ex.ToString)
         End Try
     End Sub
 
-    Private Sub ReportViewer2_Load(sender As Object, e As EventArgs) Handles ReportViewer2.Load
+    Private Sub ReportViewer2_Load(sender As Object, e As EventArgs)
 
     End Sub
 End Class

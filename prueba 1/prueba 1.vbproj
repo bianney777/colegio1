@@ -172,9 +172,35 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>colegio1DataSet11.xsd</DependentUpon>
     </Compile>
+    <Compile Include="colegio1DataSet12.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>colegio1DataSet12.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="colegio1DataSet12.vb">
+      <DependentUpon>colegio1DataSet12.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="colegio1DataSet13.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>colegio1DataSet13.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="colegio1DataSet14.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>colegio1DataSet14.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="colegio1DataSet15.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>colegio1DataSet15.xsd</DependentUpon>
+    </Compile>
     <Compile Include="colegio1DataSet2.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
+      <DependentUpon>colegio1DataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="colegio1DataSet2.vb">
       <DependentUpon>colegio1DataSet2.xsd</DependentUpon>
     </Compile>
     <Compile Include="colegio1DataSet3.Designer.vb">
@@ -348,6 +374,50 @@
     </None>
     <None Include="colegio1DataSet11.xss">
       <DependentUpon>colegio1DataSet11.xsd</DependentUpon>
+    </None>
+    <None Include="colegio1DataSet12.xsc">
+      <DependentUpon>colegio1DataSet12.xsd</DependentUpon>
+    </None>
+    <None Include="colegio1DataSet12.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>colegio1DataSet12.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="colegio1DataSet12.xss">
+      <DependentUpon>colegio1DataSet12.xsd</DependentUpon>
+    </None>
+    <None Include="colegio1DataSet13.xsc">
+      <DependentUpon>colegio1DataSet13.xsd</DependentUpon>
+    </None>
+    <None Include="colegio1DataSet13.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>colegio1DataSet13.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="colegio1DataSet13.xss">
+      <DependentUpon>colegio1DataSet13.xsd</DependentUpon>
+    </None>
+    <None Include="colegio1DataSet14.xsc">
+      <DependentUpon>colegio1DataSet14.xsd</DependentUpon>
+    </None>
+    <None Include="colegio1DataSet14.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>colegio1DataSet14.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="colegio1DataSet14.xss">
+      <DependentUpon>colegio1DataSet14.xsd</DependentUpon>
+    </None>
+    <None Include="colegio1DataSet15.xsc">
+      <DependentUpon>colegio1DataSet15.xsd</DependentUpon>
+    </None>
+    <None Include="colegio1DataSet15.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>colegio1DataSet15.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="colegio1DataSet15.xss">
+      <DependentUpon>colegio1DataSet15.xsd</DependentUpon>
     </None>
     <None Include="colegio1DataSet2.xsc">
       <DependentUpon>colegio1DataSet2.xsd</DependentUpon>

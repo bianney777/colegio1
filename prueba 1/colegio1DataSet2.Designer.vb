@@ -1598,10 +1598,6 @@ Namespace colegio1DataSet2TableAdapters
             Me.Adapter.Fill(dataTable)
             Return dataTable
         End Function
-
-        Friend Sub FillByCodigoEstudiante(obtenerMatriculaPorCodigoEstudiante As colegio1DataSet2.ObtenerMatriculaPorCodigoEstudianteDataTable, v As String)
-            Throw New NotImplementedException()
-        End Sub
     End Class
     
     '''<summary>
