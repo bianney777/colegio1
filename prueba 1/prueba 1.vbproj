@@ -197,6 +197,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>colegio1DataSet8.xsd</DependentUpon>
     </Compile>
+    <Compile Include="colegio1DataSet9.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>colegio1DataSet9.xsd</DependentUpon>
+    </Compile>
     <Compile Include="frmAdmin.Designer.vb">
       <DependentUpon>frmAdmin.vb</DependentUpon>
     </Compile>
@@ -275,6 +280,7 @@
       <DependentUpon>periodo.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="admin\Report1.rdlc" />
+    <EmbeddedResource Include="admin\Report2.rdlc" />
     <EmbeddedResource Include="frmAdmin.resx">
       <DependentUpon>frmAdmin.vb</DependentUpon>
     </EmbeddedResource>
@@ -387,6 +393,17 @@
     </None>
     <None Include="colegio1DataSet8.xss">
       <DependentUpon>colegio1DataSet8.xsd</DependentUpon>
+    </None>
+    <None Include="colegio1DataSet9.xsc">
+      <DependentUpon>colegio1DataSet9.xsd</DependentUpon>
+    </None>
+    <None Include="colegio1DataSet9.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>colegio1DataSet9.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="colegio1DataSet9.xss">
+      <DependentUpon>colegio1DataSet9.xsd</DependentUpon>
     </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>

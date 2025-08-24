@@ -29,11 +29,11 @@ Partial Class frmAdmin
         Me.GradoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MaestroToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.InscripcionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PeriodoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ClaseToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.PeriodoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ClaseToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -83,6 +83,18 @@ Partial Class frmAdmin
         Me.InscripcionToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.InscripcionToolStripMenuItem.Text = "Inscripcion "
         '
+        'PeriodoToolStripMenuItem
+        '
+        Me.PeriodoToolStripMenuItem.Name = "PeriodoToolStripMenuItem"
+        Me.PeriodoToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.PeriodoToolStripMenuItem.Text = "periodo"
+        '
+        'ClaseToolStripMenuItem
+        '
+        Me.ClaseToolStripMenuItem.Name = "ClaseToolStripMenuItem"
+        Me.ClaseToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.ClaseToolStripMenuItem.Text = "Clase"
+        '
         'Label1
         '
         Me.Label1.AutoSize = True
@@ -110,18 +122,6 @@ Partial Class frmAdmin
         Me.Button1.TabIndex = 4
         Me.Button1.Text = "Button1"
         Me.Button1.UseVisualStyleBackColor = True
-        '
-        'PeriodoToolStripMenuItem
-        '
-        Me.PeriodoToolStripMenuItem.Name = "PeriodoToolStripMenuItem"
-        Me.PeriodoToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.PeriodoToolStripMenuItem.Text = "periodo"
-        '
-        'ClaseToolStripMenuItem
-        '
-        Me.ClaseToolStripMenuItem.Name = "ClaseToolStripMenuItem"
-        Me.ClaseToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.ClaseToolStripMenuItem.Text = "Clase"
         '
         'frmAdmin
         '

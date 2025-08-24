@@ -115,6 +115,8 @@ Public Class matricula
     End Sub
 
     Private Sub matricula_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: esta línea de código carga datos en la tabla 'Colegio1DataSet2.ObtenerMatriculaPorCodigoEstudiante' Puede moverla o quitarla según sea necesario.
+        Me.ObtenerMatriculaPorCodigoEstudianteTableAdapter.Fill(Me.Colegio1DataSet2.ObtenerMatriculaPorCodigoEstudiante)
         'TODO: esta línea de código carga datos en la tab
         OcultarCamposResponsable()
         CargarEstudiantesPorCodigo()
@@ -123,6 +125,7 @@ Public Class matricula
 
 
 
+        Me.ReportViewer2.RefreshReport()
     End Sub
 
     Private Sub OcultarCamposResponsable()
@@ -523,4 +526,43 @@ Public Class matricula
         End If
 
     End Sub
+
+    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
+        Dim codigo As String = cboEstudiante.Text.Trim()
+        If codigo = "" Then
+            MessageBox.Show("Ingrese el código del estudiante.")
+            Exit Sub
+        End If
+
+        MostrarReporteMatricula(codigo)
+
+
+    End Sub
+    Private Sub MostrarReporteMatricula(codigoEstudiante As String)
+        Dim dt As New DataTable()
+        Dim query As String = "
+        SELECT *
+        FROM VistaReporteMatriculaEstudiante
+        WHERE CodigoEstudiante = @Codigo
+          AND YEAR(FechaMatricula) = YEAR(GETDATE());"
+
+        Dim connectionString As String = "Server=(localdb)\MSSQLLocalDB;Database=colegio1;Integrated Security=True"
+
+        Using conn As New SqlConnection(connectionString)
+            Using cmd As New SqlCommand(query, conn)
+                cmd.Parameters.AddWithValue("@Codigo", codigoEstudiante)
+                Using da As New SqlDataAdapter(cmd)
+                    da.Fill(dt)
+                End Using
+            End Using
+        End Using
+
+        ' Configurar el ReportViewer
+        ReportViewer1.LocalReport.DataSources.Clear()
+        ReportViewer1.LocalReport.ReportPath = "Report2.rdlc"
+        ReportViewer1.LocalReport.DataSources.Add(New ReportDataSource("DataSetMatricula", dt))
+        ReportViewer1.RefreshReport()
+    End Sub
+
+
 End Class
