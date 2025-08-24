@@ -22,6 +22,9 @@ Partial Class frmAdmin
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim ChartArea2 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend2 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series2 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.AgregarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MateriaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -33,8 +36,11 @@ Partial Class frmAdmin
         Me.ClaseToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.ChartSexo = New System.Windows.Forms.DataVisualization.Charting.Chart()
+        Me.lblTotalAlumnos = New System.Windows.Forms.Label()
+        Me.NotaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
+        CType(Me.ChartSexo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'MenuStrip1
@@ -48,7 +54,7 @@ Partial Class frmAdmin
         '
         'AgregarToolStripMenuItem
         '
-        Me.AgregarToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MateriaToolStripMenuItem, Me.MatriculaToolStripMenuItem, Me.GradoToolStripMenuItem, Me.MaestroToolStripMenuItem, Me.InscripcionToolStripMenuItem, Me.PeriodoToolStripMenuItem, Me.ClaseToolStripMenuItem})
+        Me.AgregarToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MateriaToolStripMenuItem, Me.MatriculaToolStripMenuItem, Me.GradoToolStripMenuItem, Me.MaestroToolStripMenuItem, Me.InscripcionToolStripMenuItem, Me.PeriodoToolStripMenuItem, Me.ClaseToolStripMenuItem, Me.NotaToolStripMenuItem})
         Me.AgregarToolStripMenuItem.Name = "AgregarToolStripMenuItem"
         Me.AgregarToolStripMenuItem.Size = New System.Drawing.Size(61, 20)
         Me.AgregarToolStripMenuItem.Text = "Agregar"
@@ -56,43 +62,43 @@ Partial Class frmAdmin
         'MateriaToolStripMenuItem
         '
         Me.MateriaToolStripMenuItem.Name = "MateriaToolStripMenuItem"
-        Me.MateriaToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.MateriaToolStripMenuItem.Size = New System.Drawing.Size(135, 22)
         Me.MateriaToolStripMenuItem.Text = "Materia"
         '
         'MatriculaToolStripMenuItem
         '
         Me.MatriculaToolStripMenuItem.Name = "MatriculaToolStripMenuItem"
-        Me.MatriculaToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.MatriculaToolStripMenuItem.Size = New System.Drawing.Size(135, 22)
         Me.MatriculaToolStripMenuItem.Text = "Alumno"
         '
         'GradoToolStripMenuItem
         '
         Me.GradoToolStripMenuItem.Name = "GradoToolStripMenuItem"
-        Me.GradoToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.GradoToolStripMenuItem.Size = New System.Drawing.Size(135, 22)
         Me.GradoToolStripMenuItem.Text = "Grado"
         '
         'MaestroToolStripMenuItem
         '
         Me.MaestroToolStripMenuItem.Name = "MaestroToolStripMenuItem"
-        Me.MaestroToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.MaestroToolStripMenuItem.Size = New System.Drawing.Size(135, 22)
         Me.MaestroToolStripMenuItem.Text = "Maestro"
         '
         'InscripcionToolStripMenuItem
         '
         Me.InscripcionToolStripMenuItem.Name = "InscripcionToolStripMenuItem"
-        Me.InscripcionToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.InscripcionToolStripMenuItem.Size = New System.Drawing.Size(135, 22)
         Me.InscripcionToolStripMenuItem.Text = "Inscripcion "
         '
         'PeriodoToolStripMenuItem
         '
         Me.PeriodoToolStripMenuItem.Name = "PeriodoToolStripMenuItem"
-        Me.PeriodoToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.PeriodoToolStripMenuItem.Size = New System.Drawing.Size(135, 22)
         Me.PeriodoToolStripMenuItem.Text = "periodo"
         '
         'ClaseToolStripMenuItem
         '
         Me.ClaseToolStripMenuItem.Name = "ClaseToolStripMenuItem"
-        Me.ClaseToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.ClaseToolStripMenuItem.Size = New System.Drawing.Size(135, 22)
         Me.ClaseToolStripMenuItem.Text = "Clase"
         '
         'Label1
@@ -114,21 +120,45 @@ Partial Class frmAdmin
         Me.Panel1.Size = New System.Drawing.Size(1902, 31)
         Me.Panel1.TabIndex = 3
         '
-        'Button1
+        'ChartSexo
         '
-        Me.Button1.Location = New System.Drawing.Point(304, 276)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 4
-        Me.Button1.Text = "Button1"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.ChartSexo.BackColor = System.Drawing.Color.Transparent
+        ChartArea2.Name = "ChartArea1"
+        Me.ChartSexo.ChartAreas.Add(ChartArea2)
+        Legend2.Name = "Legend1"
+        Me.ChartSexo.Legends.Add(Legend2)
+        Me.ChartSexo.Location = New System.Drawing.Point(70, 159)
+        Me.ChartSexo.Name = "ChartSexo"
+        Series2.ChartArea = "ChartArea1"
+        Series2.Legend = "Legend1"
+        Series2.Name = "Series1"
+        Me.ChartSexo.Series.Add(Series2)
+        Me.ChartSexo.Size = New System.Drawing.Size(300, 300)
+        Me.ChartSexo.TabIndex = 4
+        Me.ChartSexo.Text = "Chart1"
+        '
+        'lblTotalAlumnos
+        '
+        Me.lblTotalAlumnos.AutoSize = True
+        Me.lblTotalAlumnos.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTotalAlumnos.Location = New System.Drawing.Point(464, 159)
+        Me.lblTotalAlumnos.Name = "lblTotalAlumnos"
+        Me.lblTotalAlumnos.Size = New System.Drawing.Size(0, 37)
+        Me.lblTotalAlumnos.TabIndex = 5
+        '
+        'NotaToolStripMenuItem
+        '
+        Me.NotaToolStripMenuItem.Name = "NotaToolStripMenuItem"
+        Me.NotaToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.NotaToolStripMenuItem.Text = "Nota"
         '
         'frmAdmin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1904, 1041)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.lblTotalAlumnos)
+        Me.Controls.Add(Me.ChartSexo)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.MenuStrip1)
@@ -138,6 +168,7 @@ Partial Class frmAdmin
         Me.Text = "frmAdmin"
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
+        CType(Me.ChartSexo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -150,9 +181,11 @@ Partial Class frmAdmin
     Friend WithEvents Panel1 As Panel
     Friend WithEvents MatriculaToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents GradoToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents Button1 As Button
     Friend WithEvents MaestroToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents InscripcionToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents PeriodoToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ClaseToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ChartSexo As DataVisualization.Charting.Chart
+    Friend WithEvents lblTotalAlumnos As Label
+    Friend WithEvents NotaToolStripMenuItem As ToolStripMenuItem
 End Class

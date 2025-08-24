@@ -140,6 +140,12 @@
     <Compile Include="admin\matricula1.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="admin\nota.Designer.vb">
+      <DependentUpon>nota.vb</DependentUpon>
+    </Compile>
+    <Compile Include="admin\nota.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="admin\periodo.Designer.vb">
       <DependentUpon>periodo.vb</DependentUpon>
     </Compile>
