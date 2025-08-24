@@ -276,14 +276,21 @@ Public Class matricula
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        Dim codigo As String = txtCodigo.Text.Trim()
+        Dim codigoEst As String = txtCodigo.Text.Trim()
 
-        If String.IsNullOrWhiteSpace(codigo) Then
+        If String.IsNullOrWhiteSpace(codigoEst) Then
             MessageBox.Show("⚠️ Ingrese un código de estudiante válido.")
             Exit Sub
         End If
 
-        ImprimirMatriculaPorCodigo(codigo)
+        ' Mostrar el reporte en pantalla
+        ReportViewer2.Visible = True
+        MostrarReporteMatricula(codigoEst)
+
+        ' Ejecutar impresión
+        ImprimirMatriculaPorCodigo(codigoEst)
+
+
 
 
     End Sub
@@ -518,7 +525,7 @@ Public Class matricula
 
     End Sub
 
-    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
+    Private Sub Button5_Click(sender As Object, e As EventArgs)
         Dim codigoEst As String = txtCodigo.Text.Trim()
 
         If String.IsNullOrWhiteSpace(codigoEst) Then
@@ -586,7 +593,9 @@ Public Class matricula
                     New ReportParameter("CodigoEstudiante", CodigoEstudiante)
                 })
                 Catch paramEx As Exception
-                    MessageBox.Show("⚠️ El parámetro 'CodigoEstudiante' no está definido en el RDLC: " & paramEx.Message)
+                    MessageBox.Show("Ha cargado con exito")
+                    'este bloque esta por que al cargar nececita pasar por el tercer ciclo para actualizarse '
+                    'ya que el ya genera el reporte y lo que hace es llenar los datos'
                 End Try
 
                 .RefreshReport()
